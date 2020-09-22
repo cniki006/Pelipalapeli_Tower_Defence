@@ -9,6 +9,7 @@ TagManager:
   - Hazard
   - GameManager
   - Hostile
+  - Trigger
   layers:
   - Default
   - TransparentFX

@@ -40,7 +40,7 @@ public class TWD_HUDManager : MonoBehaviour
     }
 
     // Pelin lopetusnäkymään aktivointi.
-    public void ActiveGameOverOverlay (bool gameWon)
+    public void ActivateGameOverOverlay (bool gameWon)
     {
         // Enabloidaan lopetus-näkymä.
         gameOverOverlay.SetActive(true);

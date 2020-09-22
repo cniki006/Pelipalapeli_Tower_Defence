@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class TWD_GameManager : MonoBehaviour
 {
     // Pelin tilat.
@@ -243,7 +244,7 @@ public class TWD_GameManager : MonoBehaviour
         isGameOver = true;
 
         // Aktivoidaan pelin lopetusnäkymä voiton tai häviön mukaan.
-        //hudManager.ActivateGameOverOverlay(gameWon);
+        hudManager.ActivateGameOverOverlay(gameWon);
     }
 
     // Vihollisaallon käsittely.
