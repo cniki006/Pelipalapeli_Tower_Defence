@@ -63,11 +63,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileCount: 1
-  damage: 1
+  damage: 3
   fireRate:
     max: 1
-  cost: 2
-  range: 10
+  cost: 5
+  range: 4
   detectionArea: {fileID: 4024069676042768597}
   aimAtTarget: 1
   projectilePooler: {fileID: 0}
