@@ -31,6 +31,7 @@ public class TWD_TowerBuilder : MonoBehaviour
     // Tornien prefabit.
     // Viittaus tornin A malliin.
     [SerializeField] private GameObject towerAPrefab;
+    [SerializeField] private GameObject towerBaseA;
 
     // Projektiilitietokanta.
     private ObjectPooler selectedPooler;
@@ -251,8 +252,12 @@ public class TWD_TowerBuilder : MonoBehaviour
 
         // Luodaan uusi torni.
         GameObject newTower;
+        GameObject towerBase;
+  
+
         // Asetetaan uudelle tornille prefab, aloitussijainti ja kierto.
         newTower = Instantiate(selectedTower, pos, Quaternion.identity);
+        towerBase = Instantiate(towerBaseA, pos, Quaternion.Euler(0,180,0));
 
         // Asetetaan tornille viittaus projektiilitietokantaan.
         newTower.GetComponent<TWD_Tower>().SetProjectilePooler(selectedPooler);
