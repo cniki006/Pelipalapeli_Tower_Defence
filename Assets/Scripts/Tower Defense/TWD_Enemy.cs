@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TWD_Enemy : MonoBehaviour
 {
+
     // Elämäpisteet
     [SerializeField] private Resource health;
     //Viittaus elämäpistepalkin toimintalogiikkaan
