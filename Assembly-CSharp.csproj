@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\Tower Defense\TWD_Button.cs" />
     <Compile Include="Assets\Scripts\Tower Defense\TWD_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Tower Defense\TWD_EnemyAnimation.cs" />
     <Compile Include="Assets\Scripts\Tower Defense\TWD_GameManager.cs" />
     <Compile Include="Assets\Scripts\Tower Defense\TWD_HealthBar.cs" />
     <Compile Include="Assets\Scripts\Tower Defense\TWD_HUDManager.cs" />
