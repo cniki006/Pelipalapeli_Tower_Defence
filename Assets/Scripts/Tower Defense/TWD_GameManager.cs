@@ -19,6 +19,9 @@ public class TWD_GameManager : MonoBehaviour
     // Viittaukset vihollisten prefabeihiin
     // Viittaus A-vihollisen prefabiin
     [SerializeField] private GameObject enemyAPrefab;
+    // Viittaus Orkin prefabiin 
+    [SerializeField] private GameObject enemyBPrefab;
+
 
     //Aikaväli, jonka välein vihollisia luodaan
     [SerializeField] private Timer spawnRate;
@@ -86,6 +89,7 @@ public class TWD_GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         // Alustetaan reittien pituudet
         pathA.SetPathLenght();
 
@@ -300,6 +304,11 @@ public class TWD_GameManager : MonoBehaviour
             case 'A':
                 // Asetaan vihollismalliksi A-merkkiä vastava vihollinen
                 enemyPrefab = enemyAPrefab;
+                break;
+
+            case 'B':
+                // Asetaan vihollismalliksi B-merkkiä vastava vihollinen
+                enemyPrefab = enemyBPrefab;
                 break;
 
             default:

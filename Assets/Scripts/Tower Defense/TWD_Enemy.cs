@@ -15,6 +15,8 @@ public class TWD_Enemy : MonoBehaviour
 
     // Viittaus reittiin
     private TWD_Path path;
+    // Viittaus animaation muuttoon
+    public int animationDir=0;
     // Tämänhetkinen reittipiste
     private GameObject currentGoal;
     //Tämänhetkisen reittipisten indeksi
@@ -63,6 +65,7 @@ public class TWD_Enemy : MonoBehaviour
             //Asetaan vihollisen suunta kohti seuravaa pistettä
             Vector3 direction = (currentGoal.transform.position - this.transform.position).normalized;
             float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            if (direction.x < 0 && direction.z < 0) animationDir = 1;
             this.transform.rotation = Quaternion.Euler(0, angle, 0);
             //Lasketaan liikkemäärä tällä fraimilla
             Vector3 movement = transform.forward * velocity * Time.deltaTime;
