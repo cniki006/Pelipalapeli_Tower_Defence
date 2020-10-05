@@ -21,6 +21,8 @@ public class TWD_GameManager : MonoBehaviour
     [SerializeField] private GameObject enemyAPrefab;
     // Viittaus Orkin prefabiin 
     [SerializeField] private GameObject enemyBPrefab;
+    // Viittaus Wolfin pregabiin
+    [SerializeField] private GameObject enemyCPrefab;
 
 
     //Aikaväli, jonka välein vihollisia luodaan
@@ -309,6 +311,11 @@ public class TWD_GameManager : MonoBehaviour
             case 'B':
                 // Asetaan vihollismalliksi B-merkkiä vastava vihollinen
                 enemyPrefab = enemyBPrefab;
+                break;
+
+            case 'C':
+                // Asetaan vihollismalliksi B-merkkiä vastava vihollinen
+                enemyPrefab = enemyCPrefab;
                 break;
 
             default:

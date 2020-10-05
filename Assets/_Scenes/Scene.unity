@@ -1290,7 +1290,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Crossbow Tower 30.p
+  m_Text: Crossbow Tower 40.p
 --- !u!222 &1211064961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1592,7 +1592,7 @@ MonoBehaviour:
     type: 2}
   buildUnobstructedMaterial: {fileID: 2100000, guid: 1f9c7ab73aa9bbe418f95b3d23d263d0,
     type: 2}
-  towerAPrefab: {fileID: 3710107549999025023, guid: 4458952d187486541a44c3d195011459,
+  towerAPrefab: {fileID: 7211367144938587985, guid: 7263a2c651aa1bf43bda724d0a793558,
     type: 3}
   towerBaseA: {fileID: 5115718194109009797, guid: f069ae608ce771f49a28b79f259c5678,
     type: 3}
@@ -2257,16 +2257,19 @@ MonoBehaviour:
     - {fileID: 1202173878}
   enemyAPrefab: {fileID: 1846320091260955995, guid: 3b2d98963932e7d4c9ce67535216b214,
     type: 3}
-  enemyBPrefab: {fileID: 5766483161243359530, guid: 2655ae15dd4186340805114e0b51863e,
+  enemyBPrefab: {fileID: 3381666522859510624, guid: 2655ae15dd4186340805114e0b51863e,
+    type: 3}
+  enemyCPrefab: {fileID: 2501462358142527670, guid: 1dcc476971d60e04db894b2dccf450a1,
     type: 3}
   spawnRate:
     max: 0.5
   waves:
-  - PathAWave: AAA
+  - PathAWave: A A A A
   - PathAWave: A A A A A
-  - PathAWave: ' A AAA A B  B'
-  - PathAWave: AAAAAAAAAAAAAAAAAAAAAAAAAA
-  - PathAWave: B B B B B B B B B
+  - PathAWave: ' AAAAA A B  B'
+  - PathAWave: CCCC  CCCC
+  - PathAWave: AAAAAAAAAAAAAAAAAAAAA
+  - PathAWave: B B B B B B B B B A A A A C C C
   health:
     min: 0
     max: 10
