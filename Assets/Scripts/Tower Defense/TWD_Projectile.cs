@@ -71,6 +71,10 @@ public class TWD_Projectile : MonoBehaviour
             //Projektiili menettää yhden elämäpisteen törmäyksessä
             health.SetValue(health.GetValue() - 1);
         }
+        if(other.CompareTag("Trigger"))
+        {
+            Destruction();
+        }
     }
 
     //Peliobjektin tuhoutuminen
