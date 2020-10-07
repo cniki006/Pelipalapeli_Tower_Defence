@@ -1994,7 +1994,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Crossbow Tower 40.p
+  m_Text: Ranger 40.p
 --- !u!222 &1211064961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2545,7 +2545,7 @@ MonoBehaviour:
     type: 2}
   towerAPrefab: {fileID: 4974311286375503545, guid: 08884bec3fe269147ae010ad9f7ce340,
     type: 3}
-  towerBaseA: {fileID: 5115718194109009797, guid: f069ae608ce771f49a28b79f259c5678,
+  towerBaseA: {fileID: 1550181195954435920, guid: b9c0e5166b90a3e41afffbd2fc922346,
     type: 3}
   projectileAPooler: {fileID: 76149719}
   gameManager: {fileID: 1873105856}
