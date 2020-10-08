@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TWD_Tower : MonoBehaviour
 {
+    private int sTimer;
+    public bool sCheck = false;
+
     //Kerralla ammuttavien projektiilien määrä
     [SerializeField] private int projectileCount;
     //Tornin vahinkoarvo
@@ -53,6 +56,9 @@ public class TWD_Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //shootCheck = true;
+        //sTimer--;
+        //if (sTimer == 0) shootCheck = false;
         // Jos peli ei ole vielä päättynyt suoritetaan tornin toiminta
         if (!gameManager.GetIsGameOver())
         {
@@ -96,7 +102,9 @@ public class TWD_Tower : MonoBehaviour
                     //Ampuu kun tulinopeuden ajastin on maksimissa
                     if (fireRate.IsFinished())
                     {
+                        //shootCheck = true;
                         Shoot();
+                        //shootCheck = true;
                         // Nollataan tulinopeuden ajastin
                         fireRate.Reset();
                     }
@@ -126,6 +134,10 @@ public class TWD_Tower : MonoBehaviour
     // Tornin ampuminen 
     private void Shoot()
     {
+        sTimer = 1000;
+        //sCheck = true;
+        //shootCheck = true;
+
         //Luodaan niin monta projektiilia kuin torni ampuu kerralla
         for (int i = 0; i < projectileCount; i++)
         {
@@ -147,6 +159,7 @@ public class TWD_Tower : MonoBehaviour
                 newProjectile.GetComponent<TWD_Projectile>().SetDamage(damage);
                 //Lasketaan projektiilin elinaika projektiilin nopeuden ja tornin havaitsemisalueen avulla
                 newProjectile.GetComponent<TWD_Projectile>().SetLifetime(range / newProjectile.GetComponent<TWD_Projectile>().GetVelocity());
+                //shootCheck = false;
             }
         }
 

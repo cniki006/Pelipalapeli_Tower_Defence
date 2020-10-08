@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4974311286375503546}
   - component: {fileID: 4974311286375503492}
   m_Layer: 0
-  m_Name: CrossbowTowerTrue 1 1
+  m_Name: TrueRangerTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4974311286375503545}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4974311288092649509}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 90}
 --- !u!54 &4974311286375503546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c1dec7c1f76d14cbb62ec3ae82005c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootCheck: 0
   projectileCount: 1
   damage: 3
   fireRate:

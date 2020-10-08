@@ -18,10 +18,10 @@ public class TWD_EnemyAnimation : MonoBehaviour
     void Update()
     {
         transform.localRotation = transform.localRotation * Quaternion.Inverse(transform.rotation);
-        if (enemyScript.animationDir == 1)
-        {   
-            spriteRenderer.sprite = NEanimation;
-        }
+        //if (enemyScript.animationDir == 1)
+        //{   
+        //    spriteRenderer.sprite = NEanimation;
+        //}
 
     }
     private void LateUpdate()

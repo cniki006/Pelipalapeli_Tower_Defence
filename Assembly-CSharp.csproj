@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Shoot Em Up\STG_Projectile.cs" />
     <Compile Include="Assets\Scripts\Spin.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\Tower Defense\TWD_BaseAnimation.cs" />
     <Compile Include="Assets\Scripts\Tower Defense\TWD_Button.cs" />
     <Compile Include="Assets\Scripts\Tower Defense\TWD_Enemy.cs" />
     <Compile Include="Assets\Scripts\Tower Defense\TWD_EnemyAnimation.cs" />
