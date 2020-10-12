@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class TWD_BaseAnimation : MonoBehaviour
 {
-    [SerializeField] GameObject tower;
+
     public Sprite sprite1; // Drag your first sprite here
     public Sprite sprite2; // Drag your second sprite here
-    bool shoot = false;
+  
 
 
     private SpriteRenderer spriteRenderer;
@@ -26,20 +26,21 @@ public class TWD_BaseAnimation : MonoBehaviour
 
 
     }
-
+ 
     // Update is called once per frame
     void Update()
     {
-        TWD_Tower towerScript = tower.GetComponent<TWD_Tower>();
-        shoot = towerScript.sCheck;
-        if (shoot==true) // If the space bar is pushed down
-        {
-            ChangeTheDamnSprite(); // call method to change sprite
-            shoot = false;
-        }
+        GameObject RangedTower = GameObject.Find("TrueRangerTower");
+        TWD_Tower towerScript = RangedTower.GetComponent<TWD_Tower>();
+        //if (towerScript.Check == true) // If the space bar is pushed down
+        //{
+          //  ChangeSprite(); // call method to change sprite
+            
+        //}
+
 
     }
-    void ChangeTheDamnSprite()
+    void ChangeSprite()
     {
         //GameObject.Find("TrueRangerTower").GetComponent<move>().speed
         if (spriteRenderer.sprite == sprite1) // if the spriteRenderer sprite = sprite1 then change to sprite2

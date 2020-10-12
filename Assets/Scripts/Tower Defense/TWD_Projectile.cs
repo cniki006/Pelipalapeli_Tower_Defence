@@ -43,6 +43,7 @@ public class TWD_Projectile : MonoBehaviour
             lifetime.Count();
             //Liikutetaan peliobjektia eteenpäin
             transform.Translate(Vector3.forward * velocity * Time.deltaTime);
+            transform.Rotate(90,90,0);
         }
         
     }
@@ -71,10 +72,7 @@ public class TWD_Projectile : MonoBehaviour
             //Projektiili menettää yhden elämäpisteen törmäyksessä
             health.SetValue(health.GetValue() - 1);
         }
-        if(other.CompareTag("Trigger"))
-        {
-            Destruction();
-        }
+
     }
 
     //Peliobjektin tuhoutuminen

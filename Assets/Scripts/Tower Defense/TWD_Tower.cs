@@ -1,11 +1,16 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TWD_Tower : MonoBehaviour
 {
     private int sTimer;
-    public bool sCheck = false;
+    private bool Check=false;
+    public Sprite sprite1; // Drag your first sprite here
+    public Sprite sprite2; // Drag your second sprite here
+  
+    private SpriteRenderer spriteRenderer;
 
     //Kerralla ammuttavien projektiilien määrä
     [SerializeField] private int projectileCount;
@@ -50,15 +55,16 @@ public class TWD_Tower : MonoBehaviour
         targets = new GameObjectGroup();
 
         //Asetetaan havaitsemisalueen koko havaitsemisalueen mukaan
-        detectionArea.radius = range;
+        detectionArea.radius = range/2;
+
+        spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
+        if (spriteRenderer.sprite == null) // if the sprite on spriteRenderer is null then
+            spriteRenderer.sprite = sprite1; // set the sprite to sprite1
     }
 
     // Update is called once per frame
     void Update()
     {
-        //shootCheck = true;
-        //sTimer--;
-        //if (sTimer == 0) shootCheck = false;
         // Jos peli ei ole vielä päättynyt suoritetaan tornin toiminta
         if (!gameManager.GetIsGameOver())
         {
@@ -102,15 +108,22 @@ public class TWD_Tower : MonoBehaviour
                     //Ampuu kun tulinopeuden ajastin on maksimissa
                     if (fireRate.IsFinished())
                     {
-                        //shootCheck = true;
                         Shoot();
-                        //shootCheck = true;
                         // Nollataan tulinopeuden ajastin
                         fireRate.Reset();
                     }
                 }
             }
         }
+        transform.localRotation = transform.localRotation * Quaternion.Inverse(transform.rotation);
+        transform.localRotation = transform.localRotation * Quaternion.Euler(90, 0, 0);
+        transform.localScale = new Vector3(2, 2, 1);
+        sTimer--;
+        if (Check == true) // If the space bar is pushed down
+        {
+            spriteRenderer.sprite = sprite2;
+        }
+        if (sTimer <= 0) spriteRenderer.sprite = sprite1;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -130,13 +143,16 @@ public class TWD_Tower : MonoBehaviour
             targets.Remove(other.transform.root.gameObject);
         }
     }
-
+    void ChangeSprite()
+    {
+        spriteRenderer.sprite = sprite2;
+        spriteRenderer.sprite = sprite1;
+    }
     // Tornin ampuminen 
     private void Shoot()
     {
-        sTimer = 1000;
-        //sCheck = true;
-        //shootCheck = true;
+        Check = true;
+        sTimer = 3;
 
         //Luodaan niin monta projektiilia kuin torni ampuu kerralla
         for (int i = 0; i < projectileCount; i++)
@@ -159,7 +175,7 @@ public class TWD_Tower : MonoBehaviour
                 newProjectile.GetComponent<TWD_Projectile>().SetDamage(damage);
                 //Lasketaan projektiilin elinaika projektiilin nopeuden ja tornin havaitsemisalueen avulla
                 newProjectile.GetComponent<TWD_Projectile>().SetLifetime(range / newProjectile.GetComponent<TWD_Projectile>().GetVelocity());
-                //shootCheck = false;
+                //Check = false;
             }
         }
 
