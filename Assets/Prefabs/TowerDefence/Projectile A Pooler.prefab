@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4028d26a29f26c541b50aafb547848c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 1973878989715197150, guid: 9ca08b1925f33e149bd6dd9fa9d82cc0,
+  pooledObject: {fileID: 604881437087920313, guid: 99378deedc8da264e97b1263add12930,
     type: 3}
-  pooledAmount: 25
+  pooledAmount: 10
   canExpand: 1

@@ -42,6 +42,7 @@ public class ObjectPooler : MonoBehaviour
         if (canExpand)
         {
             GameObject obj = (GameObject)Instantiate(pooledObject);
+
             pooledObjects.Add(obj);
 
             Debug.Log(this.gameObject.name + " pool size: " + pooledObjects.Count);

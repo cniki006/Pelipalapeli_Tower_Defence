@@ -159,17 +159,23 @@ public class TWD_Tower : MonoBehaviour
         {
             //Lisäkierto joka asetetaan eri projektiileille
             Vector3 additionalRotation = new Vector3(0, (360 / projectileCount * i), 0);
+            
             //Haetaan tietokannasta uusi projektiili
             GameObject newProjectile = projectilePooler.GetPooledObject();
+            
 
             //Jos projektiili ei ole tyhjä , eli se saatin haettua tietokannasta
             if (newProjectile != null)
             {
                 //Asetetaan projektiilille aloitussijainti ja kierto.
+                //Asetetaan projektiilille aloitussijainti ja kierto.
                 newProjectile.transform.position = this.transform.position;
+                
                 newProjectile.transform.rotation = this.transform.rotation * Quaternion.Euler(additionalRotation);
+                
                 //Enabloidaan projektiili
                 newProjectile.SetActive(true);
+                
 
                 //Asetetaan tornin vahinkoarvo ammuksen vahinkoarvoksi.
                 newProjectile.GetComponent<TWD_Projectile>().SetDamage(damage);

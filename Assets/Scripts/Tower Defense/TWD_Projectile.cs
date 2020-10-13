@@ -43,7 +43,7 @@ public class TWD_Projectile : MonoBehaviour
             lifetime.Count();
             //Liikutetaan peliobjektia eteenpäin
             transform.Translate(Vector3.forward * velocity * Time.deltaTime);
-            transform.Rotate(90,90,0);
+        //    transform.Rotate(90,90,0);
         }
         
     }

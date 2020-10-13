@@ -31,8 +31,10 @@ public class TWD_TowerBuilder : MonoBehaviour
     // Tornien prefabit.
     // Viittaus tornin A malliin.
     [SerializeField] private GameObject towerAPrefab;
-   // [SerializeField] private GameObject towerBaseA;
-
+    // [SerializeField] private GameObject towerBaseA;
+    [SerializeField] private GameObject towerBPrefab;
+    [SerializeField] private GameObject towerCPrefab;
+ 
     // Projektiilitietokanta.
     private ObjectPooler selectedPooler;
     // Viittaukset projektiilitietokantoihin.
@@ -51,9 +53,10 @@ public class TWD_TowerBuilder : MonoBehaviour
     // Viittaukset tornien rakentamispainikkeisiin HUDissa.
     // Viittaus A-tornin rakentamispanikkeeseen.
     [SerializeField] private Button towerAButton;
+    [SerializeField] private Button towerBButton;
 
     public void TowerAButtonClicked() { EnterBuildState(towerAPrefab, projectileAPooler); }
-
+    public void TowerBButtonClicked() { EnterBuildState(towerBPrefab, projectileAPooler); }
     private void SetIndicatorMaterial(Material newMaterial)
     {
         // Jos rakentamisindikaattorilla on Renderer-komponentti.
@@ -279,6 +282,14 @@ public class TWD_TowerBuilder : MonoBehaviour
         if (towerAButton.GetComponent<TWD_Button>() != null)
         {
             if (towerAButton.GetComponent<TWD_Button>().GetIsHovered())
+            {
+                return true;
+            }
+        }
+
+        if (towerBButton.GetComponent<TWD_Button>() !=null)
+        {
+            if (towerBButton.GetComponent<TWD_Button>().GetIsHovered())
             {
                 return true;
             }
